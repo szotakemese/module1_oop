@@ -152,7 +152,7 @@ const productExpController = {
     }
 }
 
-//{name:'', country:'', ptice:123, quantity:456}
+//{name:'', country:'', price:123, quantity:456}
 const isValid = (product) => {
     return product && product.name && product.country && product.price && product.quantity;
 }
