@@ -28,6 +28,9 @@ const productExpController = {
     //sort by field
     getSorted: (req, res) => {
         const field = req.query["f"] || "name";
+        const rule = req.query["rule"] || 1
+
+    
         console.log("Get all sorted");
         const mongoClient = new MongoClient(url);
         mongoClient.connect(function (err, result) {
@@ -39,7 +42,7 @@ const productExpController = {
                     res.status(500).send(err);
                 else{
                     //SORT
-                    product.find().sort( { [field]: 1 }).toArray( function (err, result2){
+                    product.find().sort( { [field]: parseInt(rule) }).toArray( function (err, result2){
                         if (err)
                             res.status(500).send(err);
                         else{res.send(result2)
