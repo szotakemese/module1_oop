@@ -27,8 +27,9 @@ const productExpController = {
 
     //sort by field
     getSorted: (req, res) => {
-        const field = req.query["f"] || "name";
-        const rule = req.query["rule"] || 1
+        const field = req.query["f"] || "name"; //fields: name, coutry, price, quantity
+
+        const rule = req.query["rule"] || 1; //rules: 1(normal), -1(reversed)
 
     
         console.log("Get all sorted");
